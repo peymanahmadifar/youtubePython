@@ -17,6 +17,12 @@
             <div class="alert alert-success">
                 <a href="{% url 'sign' %}">click to sign</a>
             </div>
+            {% for c in comments %}
+            <div class="alert alert-success">{{ c.name }}
+                <br>
+                {{c.comment}}
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
