@@ -25,7 +25,8 @@ SECRET_KEY = '+s+!@o)z^os55l1cy7wv@4%v%w8rtmiyldf9+qw-$j5yyt$)00'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'peymanahmadifar.pythonanywhere.com'
+    'peymanahmadifar.pythonanywhere.com',
+    '127.0.0.1'
 ]
 
 # Application definition
@@ -117,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#STATIC_ROOT = '/home/peymanahmadifar/youtubePython/static'
+STATIC_ROOT = '/home/peymanahmadifar/youtubePython/static'
 
 STATICFILES_DIRS = (
 
