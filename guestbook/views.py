@@ -16,7 +16,7 @@ def sign(request):
         if form.is_valid():
             new_comment = Comment(name=request.POST['name'], comment=request.POST['comment'])
             new_comment.save()
-            return redirect('index')
+            return redirect('/guestbook/')
     else:
         form = CommentForm()
     context = {'form': form}
