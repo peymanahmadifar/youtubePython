@@ -1,4 +1,5 @@
 from django import forms
+from .models import Todo
 
 
 class TodoForm(forms.Form):
@@ -9,3 +10,18 @@ class TodoForm(forms.Form):
             'aria-label': 'todo',
             'aria-describedby': 'add-btn'
         }))
+
+
+class newTodoForm(forms.ModelForm):
+    class Meta:
+        model = Todo
+        fields = ['text']
+        widgets = {
+            'text': forms.TextInput(
+                attrs={
+                    'class': 'form-control',
+                    'placeholder': 'متن تایپ کنید',
+                    'aria-label': 'todo',
+                    'aria-describedby': 'add-btn'
+                })
+        }
