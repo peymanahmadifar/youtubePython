@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
+from django.utils import timezone
 
 from .models import Todo
 from .forms import TodoForm, newTodoForm
@@ -8,8 +9,9 @@ from .forms import TodoForm, newTodoForm
 def index(request):
     todo_list = Todo.objects.order_by('id')
     # form = TodoForm()
+    mydate = timezone.now()
     newtodoform = newTodoForm()
-    context = {'todo_list': todo_list, 'form': newtodoform}
+    context = {'todo_list': todo_list, 'form': newtodoform, 'mydate': mydate}
     return render(request, 'todo/index.html', context)
 
 
